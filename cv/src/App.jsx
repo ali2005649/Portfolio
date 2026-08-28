@@ -17,6 +17,7 @@ import GlowCard from "./components/GlowCard";
 import ScrollMarquee from "./components/ScrollMarquee";
 
 const EASE = [0.16, 1, 0.3, 1];
+const RESUME_PDF = "/cv.pdf";
 
 const projects = [
   {
@@ -243,10 +244,11 @@ export default function App() {
             </MagneticButton>
             <MagneticButton
               as="a"
-              href="/cv.pdf"
+              href={RESUME_PDF}
               download="Ali-Basim-Salman-CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
+              type="application/pdf"
               className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-medium text-slate-100 backdrop-blur-md"
             >
               <FileDown size={15} />
@@ -409,10 +411,11 @@ export default function App() {
                 </MagneticButton>
                 <MagneticButton
                   as="a"
-                  href="/cv.pdf"
+                  href={RESUME_PDF}
                   download="Ali-Basim-Salman-CV.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
+                  type="application/pdf"
                   className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm text-slate-200"
                 >
                   <FileDown size={14} />
