@@ -44,15 +44,16 @@ const projects = [
     icon: Monitor,
   },
   {
-    title: "CineVault",
+    title: "Movies",
     category: "Web & Mobile Ecosystem",
     description:
       "Movie logging and discovery with live APIs, tactile watchlists, and a local workflow tuned for speed.",
     tags: ["React", "REST APIs", "Tailwind", "Mobile"],
     featured: false,
-    status: "Local Environment",
+    status: "Live",
     statusClass: "text-sky-300 bg-sky-400/10 border-sky-400/20",
-    href: "#",
+    href: "https://github.com/ali2005649/Movies-2",
+    liveHref: "https://movies-one-virid.vercel.app/",
     icon: Film,
   },
 ];
@@ -129,16 +130,30 @@ function ProjectTile({ project, delay }) {
         ))}
       </div>
 
-      <MagneticButton
-        as="a"
-        href={project.href}
-        target="_blank"
-        rel="noreferrer"
-        className="relative z-[2] mt-5 inline-flex items-center gap-2 self-start rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-sky-200 hover:border-sky-400/40 hover:text-sky-100"
-      >
-        View source
-        <ArrowUpRight size={15} />
-      </MagneticButton>
+      <div className="relative z-[2] mt-5 flex flex-wrap items-center gap-2">
+        <MagneticButton
+          as="a"
+          href={project.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 self-start rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-sky-200 hover:border-sky-400/40 hover:text-sky-100"
+        >
+          View source
+          <ArrowUpRight size={15} />
+        </MagneticButton>
+        {project.liveHref && (
+          <MagneticButton
+            as="a"
+            href={project.liveHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 self-start rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-sky-200 hover:border-sky-400/40 hover:text-sky-100"
+          >
+            Visit Website
+            <ArrowUpRight size={15} />
+          </MagneticButton>
+        )}
+      </div>
     </GlowCard>
   );
 }
