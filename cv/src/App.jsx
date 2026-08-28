@@ -17,7 +17,7 @@ import GlowCard from "./components/GlowCard";
 import ScrollMarquee from "./components/ScrollMarquee";
 
 const EASE = [0.16, 1, 0.3, 1];
-const RESUME_PDF = "/cv.pdf";
+const RESUME_PDF = "/ALI_BASIM_SALMAN_CV.pdf";
 
 const projects = [
   {
