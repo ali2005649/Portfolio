@@ -72,7 +72,7 @@ const skillGroups = [
     copy: "Logic, data, and the metal underneath the UI.",
     icon: Database,
     iconClass: "text-emerald-400",
-    skills: ["Python", "Dart", "C++", "Supabase"],
+    skills: ["Dart", "C++", "Supabase"],
     span: "md:col-span-2",
   },
   {
@@ -260,7 +260,7 @@ export default function App() {
               { label: "React & Web", icon: Code2 },
               { label: "Flutter & Mobile", icon: Smartphone },
               { label: "C++ & Systems", icon: Cpu },
-              { label: "Python & Data", icon: Database },
+              
             ].map(({ label, icon: Icon }) => (
               <span
                 key={label}
@@ -389,7 +389,7 @@ export default function App() {
                   as="a"
                   href="https://github.com/ali2005649"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm text-slate-200"
                 >
                   GitHub
