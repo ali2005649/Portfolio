@@ -175,7 +175,7 @@ export default function App() {
             className="cursor-pointer text-sm font-semibold tracking-tight text-slate-100"
             strength={0.18}
           >
-            Nozom
+            Ali Basim Salman / 2026
           </MagneticButton>
           <nav className="flex items-center gap-1 text-sm text-slate-400">
             {[
@@ -411,7 +411,7 @@ export default function App() {
 
       <footer className="relative z-10 border-t border-white/5">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6 text-xs text-slate-500">
-          <span>Nozom</span>
+          <span>Ali Basim Salman · cyber-glass lab</span>
           <span>{new Date().getFullYear()}</span>
         </div>
       </footer>
