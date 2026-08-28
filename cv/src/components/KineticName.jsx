@@ -2,7 +2,7 @@ import { motion, useReducedMotion } from "framer-motion";
 
 const EASE = [0.16, 1, 0.3, 1];
 
-export default function KineticName({ text = "Ali Basim Salman" }) {
+export default function KineticName({ text = "Nozom" }) {
   const reduce = useReducedMotion();
   const chars = Array.from(text);
 
