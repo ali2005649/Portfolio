@@ -244,7 +244,9 @@ export default function App() {
             <MagneticButton
               as="a"
               href="/cv.pdf"
-              download
+              download="Ali-Basim-Salman-CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-medium text-slate-100 backdrop-blur-md"
             >
               <FileDown size={15} />
@@ -378,7 +380,7 @@ export default function App() {
               <p className="relative z-[2] mx-auto mt-4 max-w-xl text-base leading-relaxed text-slate-400">
                 Projects, internships, or a sharp conversation about software and systems. The channel is open.
               </p>
-              <div className="relative z-[2] mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <div className="relative z-[2] mt-8 flex flex-col flex-wrap items-center justify-center gap-3 sm:flex-row">
                 <MagneticButton
                   as="a"
                   href="mailto:wx22qzt@gmail.com"
@@ -398,8 +400,19 @@ export default function App() {
                 </MagneticButton>
                 <MagneticButton
                   as="a"
+                  href="https://www.linkedin.com/in/ali-basim-004a81431/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm text-slate-200"
+                >
+                  LinkedIn
+                </MagneticButton>
+                <MagneticButton
+                  as="a"
                   href="/cv.pdf"
-                  download
+                  download="Ali-Basim-Salman-CV.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm text-slate-200"
                 >
                   <FileDown size={14} />
