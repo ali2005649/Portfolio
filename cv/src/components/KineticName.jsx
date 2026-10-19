@@ -8,14 +8,14 @@ export default function KineticName({ text = "Ali Basim Salman" }) {
 
   if (reduce) {
     return (
-      <h1 className="bg-gradient-to-b from-white via-slate-100 to-sky-300 bg-clip-text text-5xl font-semibold tracking-tight text-transparent md:text-7xl">
+      <h1 className="bg-gradient-to-b from-white via-slate-100 to-sky-300 bg-clip-text text-[2.6rem] font-semibold leading-tight tracking-tight text-transparent sm:text-5xl md:text-7xl">
         {text}
       </h1>
     );
   }
 
   return (
-    <h1 className="relative inline-block max-w-full text-5xl font-semibold tracking-tight md:text-7xl">
+    <h1 className="relative inline-block max-w-full text-[2.6rem] font-semibold leading-tight tracking-tight sm:text-5xl md:text-7xl">
       <span className="sr-only">{text}</span>
       <span aria-hidden="true" className="flex flex-wrap justify-center">
         {chars.map((char, index) => (

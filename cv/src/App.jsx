@@ -66,7 +66,7 @@ const skillGroups = [
     icon: Smartphone,
     iconClass: "text-cyan-400",
     skills: ["React", "React Native", "Flutter", "JavaScript", "Tailwind CSS"],
-    span: "md:col-span-4",
+    span: "md:col-span-2 lg:col-span-4",
   },
   {
     title: "Core Systems",
@@ -74,7 +74,7 @@ const skillGroups = [
     icon: Database,
     iconClass: "text-emerald-400",
     skills: ["Dart", "C++", "Supabase"],
-    span: "md:col-span-2",
+    span: "lg:col-span-2",
   },
   {
     title: "Environments",
@@ -82,7 +82,7 @@ const skillGroups = [
     icon: Code2,
     iconClass: "text-indigo-400",
     skills: ["Git & GitHub", "VS Code", "Android Studio", "Cursor AI"],
-    span: "md:col-span-3",
+    span: "lg:col-span-3",
   },
 ];
 
@@ -93,8 +93,8 @@ function ProjectTile({ project, delay }) {
     <GlowCard
       tilt
       delay={delay}
-      className={project.featured ? "md:col-span-4 md:row-span-2" : "md:col-span-2"}
-      innerClassName="flex h-full flex-col p-6 md:p-8"
+      className={project.featured ? "md:col-span-2" : ""}
+      innerClassName="flex h-full flex-col p-5 sm:p-6 md:p-8"
     >
       <div className="relative z-[2] mb-6 flex items-start justify-between gap-3">
         <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-slate-900/80">
@@ -171,16 +171,17 @@ export default function App() {
       <MeshBackground />
       <div className="pointer-events-none fixed inset-0 z-[1] bg-slate-950/35" />
 
-      <header className="fixed inset-x-0 top-0 z-40 px-4">
-        <div className="mx-auto mt-4 flex h-14 max-w-6xl items-center justify-between rounded-full border border-white/10 bg-slate-950/55 px-5 backdrop-blur-2xl md:px-6">
+      <header className="fixed inset-x-0 top-0 z-40 px-3 sm:px-4">
+        <div className="mx-auto mt-4 flex h-14 max-w-6xl items-center justify-between gap-2 rounded-full border border-white/10 bg-slate-950/55 px-4 backdrop-blur-2xl sm:px-5 md:px-6">
           <MagneticButton
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="cursor-pointer text-sm font-semibold tracking-tight text-slate-100"
+            className="cursor-pointer whitespace-nowrap text-sm font-semibold tracking-tight text-slate-100"
             strength={0.18}
           >
-            Ali Basim Salman / 2026
+            <span className="sm:hidden">Ali Basim</span>
+            <span className="hidden sm:inline">Ali Basim Salman / 2026</span>
           </MagneticButton>
-          <nav className="flex items-center gap-1 text-sm text-slate-400">
+          <nav className="flex items-center gap-0.5 text-[13px] text-slate-400 sm:gap-1 sm:text-sm">
             {[
               ["projects", "Work"],
               ["skills", "Stack"],
@@ -190,7 +191,7 @@ export default function App() {
                 key={id}
                 strength={0.22}
                 onClick={() => scrollTo(id)}
-                className="cursor-pointer rounded-full px-3 py-1.5 transition-colors hover:bg-white/5 hover:text-slate-100"
+                className="cursor-pointer rounded-full px-2.5 py-2 transition-colors sm:px-3 sm:py-1.5 hover:bg-white/5 hover:text-slate-100"
               >
                 {label}
               </MagneticButton>
@@ -200,7 +201,7 @@ export default function App() {
       </header>
 
       <main className="relative z-10">
-        <section className="relative mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center px-6 pb-24 pt-28 text-center">
+        <section className="relative mx-auto flex min-h-[100svh] max-w-5xl flex-col items-center justify-center px-5 pb-20 pt-28 sm:px-6 md:pb-24 text-center">
           <motion.div
             initial={{ opacity: 0, y: 16, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -217,7 +218,7 @@ export default function App() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.85, ease: EASE }}
-            className="mt-6 text-lg font-medium text-slate-300 md:text-xl"
+            className="mt-6 text-base font-medium text-slate-300 sm:text-lg md:text-xl"
           >
             Software & systems engineer in the making
           </motion.p>
@@ -225,7 +226,7 @@ export default function App() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.95, ease: EASE }}
-            className="mt-3 max-w-xl text-base leading-relaxed text-slate-400"
+            className="mt-3 max-w-xl text-[15px] leading-relaxed text-slate-400 sm:text-base"
           >
             Senior computer engineering student building web, mobile, and desktop systems — architecture first, interface second, both treated as one machine.
           </motion.p>
@@ -260,7 +261,7 @@ export default function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2, duration: 0.6 }}
-            className="mt-12 flex flex-wrap justify-center gap-2"
+            className="mt-10 flex flex-wrap justify-center gap-2 sm:mt-12"
           >
             {[
               { label: "React & Web", icon: Code2 },
@@ -279,7 +280,7 @@ export default function App() {
           </motion.div>
         </section>
 
-        <section id="projects" className="relative px-6 py-28">
+        <section id="projects" className="relative px-4 py-20 sm:px-6 md:py-28">
           <ScrollMarquee text="Software · Systems · Engineering" />
           <div className="relative z-10 mx-auto max-w-6xl">
             <motion.div
@@ -287,18 +288,18 @@ export default function App() {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.7, ease: EASE }}
-              className="mb-12 max-w-2xl"
+              className="mb-10 max-w-2xl md:mb-12"
             >
               <p className="mb-3 font-mono text-xs uppercase tracking-[0.22em] text-sky-400">01 — Selected work</p>
-              <h2 className="text-3xl font-semibold tracking-tight text-slate-50 md:text-5xl">
+              <h2 className="text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl md:text-5xl">
                 Systems, not slides
               </h2>
               <p className="mt-3 text-base leading-relaxed text-slate-400">
-                Hover a card — it tracks you. The glare is the pointer. The tilt is the physics.
+                Hover or tap a card — it tracks you. The glare is the pointer. The tilt is the physics.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-6 md:grid-rows-2">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               {projects.map((project, index) => (
                 <ProjectTile key={project.title} project={project} delay={index * 0.08} />
               ))}
@@ -306,7 +307,7 @@ export default function App() {
           </div>
         </section>
 
-        <section id="skills" className="relative px-6 py-28">
+        <section id="skills" className="relative px-4 py-20 sm:px-6 md:py-28">
           <ScrollMarquee text="React · Flutter · C++ · Python" reverse />
           <div className="relative z-10 mx-auto max-w-6xl">
             <motion.div
@@ -314,10 +315,10 @@ export default function App() {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.7, ease: EASE }}
-              className="mb-12 max-w-2xl"
+              className="mb-10 max-w-2xl md:mb-12"
             >
               <p className="mb-3 font-mono text-xs uppercase tracking-[0.22em] text-sky-400">02 — Stack</p>
-              <h2 className="text-3xl font-semibold tracking-tight text-slate-50 md:text-5xl">
+              <h2 className="text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl md:text-5xl">
                 Instruments, categorized
               </h2>
               <p className="mt-3 text-base leading-relaxed text-slate-400">
@@ -325,11 +326,11 @@ export default function App() {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-6">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-6">
               {skillGroups.map((group, index) => {
                 const Icon = group.icon;
                 return (
-                  <GlowCard key={group.title} delay={index * 0.08} className={group.span} innerClassName="p-6 md:p-7">
+                  <GlowCard key={group.title} delay={index * 0.08} className={group.span} innerClassName="p-5 sm:p-6 md:p-7">
                     <div className="relative z-[2] mb-5 flex items-center gap-3">
                       <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-slate-900/80">
                         <Icon size={18} className={group.iconClass} />
@@ -351,7 +352,7 @@ export default function App() {
                 );
               })}
 
-              <GlowCard delay={0.24} className="md:col-span-3" innerClassName="flex h-full flex-col justify-between p-6 md:p-7">
+              <GlowCard delay={0.24} className="md:col-span-2 lg:col-span-3" innerClassName="flex h-full flex-col justify-between p-5 sm:p-6 md:p-7">
                 <div className="relative z-[2]">
                   <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-sky-400">Signal</p>
                   <h3 className="mt-2 text-2xl font-semibold text-slate-50">Remote-ready. Architecture-first.</h3>
@@ -370,13 +371,13 @@ export default function App() {
           </div>
         </section>
 
-        <section id="contact" className="relative px-6 pb-28 pt-12">
+        <section id="contact" className="relative px-4 pb-20 pt-8 sm:px-6 md:pb-28 md:pt-12">
           <div className="mx-auto max-w-6xl">
-            <GlowCard delay={0.05} className="overflow-hidden" innerClassName="px-8 py-14 text-center md:px-16 md:py-16">
+            <GlowCard delay={0.05} className="overflow-hidden" innerClassName="px-5 py-12 text-center sm:px-8 sm:py-14 md:px-16 md:py-16">
               <p className="relative z-[2] mb-3 font-mono text-xs uppercase tracking-[0.22em] text-sky-400">
                 03 — Contact
               </p>
-              <h2 className="relative z-[2] text-3xl font-semibold tracking-tight text-slate-50 md:text-5xl">
+              <h2 className="relative z-[2] text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl md:text-5xl">
                 Let’s engineer the next one
               </h2>
               <p className="relative z-[2] mx-auto mt-4 max-w-xl text-base leading-relaxed text-slate-400">
@@ -428,7 +429,7 @@ export default function App() {
       </main>
 
       <footer className="relative z-10 border-t border-white/5">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6 text-xs text-slate-500">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-6 text-xs text-slate-500 sm:px-6">
           <span>Ali Basim Salman · cyber-glass lab</span>
           <span>{new Date().getFullYear()}</span>
         </div>
